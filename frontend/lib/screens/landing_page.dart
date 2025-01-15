@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/screens/home_page.dart';
 
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: LandingPage(),
     );
   }
@@ -14,11 +19,13 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Ensure background color is set directly on Scaffold
+      backgroundColor: Color(0xFFF0F0F0),  // Light yellow background color
       body: Center(
         child: SingleChildScrollView(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,  
-            crossAxisAlignment: CrossAxisAlignment.center,  
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Image at the top
               Container(
@@ -26,7 +33,7 @@ class LandingPage extends StatelessWidget {
                 height: 300,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/image.png'),
+                    image: AssetImage('assets/landing.png'),
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -66,6 +73,9 @@ class LandingPage extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       // Handle button action
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomePage()),);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red,

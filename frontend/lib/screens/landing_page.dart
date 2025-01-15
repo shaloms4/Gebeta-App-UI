@@ -71,7 +71,7 @@ class LandingPage extends StatelessWidget {
                       backgroundColor: Colors.red,
                       padding: EdgeInsets.symmetric(vertical: 15),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(15),
                       ),
                     ),
                     child: Text(
